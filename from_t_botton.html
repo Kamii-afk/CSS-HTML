@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html lang="pt-BR">
+
+<head>
+    <meta charset = "utf-8">
+    <meta name = "viewport" content = "width=device-widht, initial-scale=1.0">
+    <title>Echoes from my head</title>
+
+
+    <style>
+        :root {
+            --back: #845ec2;
+            --card: linear-gradient(25deg, #d65db8, transparent 70%),
+                    linear-gradient(190deg, #f9f871, transparent 70%);
+            --summarybc: #00441b;
+            --whrs: black;
+            --mut: black;
+            --radius: 20px;
+            --gap: 1rem;
+            color-scheme: dark;
+        }
+
+/*Reset*/
+* { box-sizing: border-box; margin : 0; padding:0; }
+html, body {height: 100%;}
+body {
+    font-family: Inter, system-ui, apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    background: linear-gradient(180deg, var(--back) 0%, #d65db8 100%);
+    color: white;
+    padding: 2rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+    .cont {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        gap: var(--gap)
+    }
+
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--gap)
+    }
+
+    .brand{ 
+        font-weight: 700;
+        font-size: 1.25rem;
+        color: var(--whrs);
+    }
+    nav a {
+        color: var(--mut);
+        text-decoration: none;
+        margin-left: 1rem;
+    }
+    nav a:hover {
+        background: linear-gradient(90deg, #ff00cc, #3333ff);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transform: scale(1.05);
+    }
+
+    .main_card {
+        display: flex;
+        align-items: center;
+        background: var(--card);
+        border-radius: var(--radius);
+        padding: 3rem;
+        box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+    }
+    .text_column {
+        flex: 1;
+    }
+    .button_column {
+        display: flex;
+        align-items: center;
+    }
+    .only_text_column {
+        flex: 1; /*A coluna do texto crece e ocupa td espaço do card*/
+        display: flex;
+        flex-direction: column; /*Mantém em colunas, se não tudo fica em linha reta*/
+        text-align: center;
+        justify-content: center;
+    }
+
+    .btn {
+        width: 120px;
+        background: white;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border-radius: 20px;
+        box-shadow: 0 5px 10px rgba(2,6,23,0.6);
+        color: black;
+        padding: 0.75rem;
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+    }
+    .btn:hover {
+        transform: scale(1.05);
+        background: linear-gradient(90deg, #d65db8, #f9f871);
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1rem;
+    }
+    </style>
+</head>
+<body>
+    <div class="cont">
+        <header> 
+            <div class="brand">From the botton</div>
+            <nav>
+                <a href="#">Início</a>
+                <a href="#">Sobre nós</a>
+                <a href="#">Message</a>
+            </nav>
+    </header>
+
+    <main>
+        <section class="main_card">
+            <div class="text_column">
+                <h2>Dragon flames</h2>
+                <p>BLABLABLA</p>
+            </div>
+            <div class="button_column">
+                <a class="btn" href="#">Clique aqui</a>
+            </div>
+        </section>
+
+        <section style="margin-top: 1rem;" class="grid">
+        <article class="main_card">
+            <div class="only_text_column">
+                <h2>Every day, a new day</h2>
+                <p>So stand in this way</p>
+            </div>
+        </article>
+        <article class="main_card">
+            <div class="only_text_column">
+                <h2>Thats more text</h2>
+                <p>BLABLABLA</p>
+            </div>
+        </article>
+        <article class="main_card">
+            <div class="only_text_column">
+                <h2>Just kiding</h2>
+                <p style="margin-top: .25rem;"><a class="btn" href="#">Test button</a></p>
+            </div>
+        </article>
+        </section>
+    </main>
+</body>
+</html>

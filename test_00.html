@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang = "pt-BR">
+<head>
+    <meta charset = "utf-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Exemplo HTML X CSS</title>
+    
+    <!--Link de arquivo externo (nesse caso o CSS)-->
+    <link rel = "stylesheet" href = "style.css">
+    
+    <!--Inclusão de um CSS interno (para protótipos rápidos)-->
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #0b1220;
+            --accent: #06b6d4;
+            --muted: #94a3b8;
+            --radius: 12px;
+            --gap: 1rem;
+            color-scheme: dark;
+        }
+
+    /*Reset*/
+    * { box-sizing: border-box; margin :0; padding:0; }
+    html, body {height: 100%;}
+    body {
+        font-family: Inter, system-ui, ápple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+        background: linear-gradient(180deg, var(--bg) 0%, #071029 100%);
+        color: white;
+        padding: 2rem;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .no_click {
+        user-select: none; /*impede seleção*/
+        cursor: default; /*cursor sem alteração*/
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        gap: var(--gap);
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .brand { font-weight: 700; font-size: 1.25rem; color: var(--accent); }
+    nav a { color: var(--muted); text-decoration: none; margin-left: 1rem; }
+    nav a:hover {color: white;}
+
+    main{
+        margin-top: 1rem;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1rem;
+    }
+
+    .card {
+        background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+        border-radius: var(--radius);
+        padding: 1rem;
+        box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+        border: 1px solid rgba(255,255,255,0.03);
+    }
+    .card:hover {transform: translateY(-2px); }
+    .card h3 { margin-bottom: 0.5rem; }
+    .card p { color: var(--muted); font-size: 0.95rem; line-height: 1.4; }
+
+    .btn {
+        display: inline-block;
+        padding: 0.6rem 1rem;
+        border-radius: 10px;
+        background: linear-gradient(90deg, var(--accent), #7dd3fc);
+        color: #012; /*contraste apenas pelo gradiente escuro 😊*/
+        font-weight: 600;
+        text-decoration: none;
+    }
+    .btn:hover {
+        transform: scale(1.05);
+        background: linear-gradient(90deg, var(--accent), #def4ff);
+        
+    }
+
+    footer {
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.9rem;
+        padding: 1rem 0;
+    }
+
+    /*Melhorias integradas*/
+    @media (max-widht: 480px) {
+        .brand {font-size: 1rem; }
+        body {padding: 1rem; }
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="brand no_click">Modelinho</div>
+            <nav class="no_click">
+                <a href="#">Início</a>
+                <a href="#">Sobre</a>
+                <a href="#">Contato</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero card no_click">
+                <h2>HTML + CSS</h2>
+                <p>Blablabla</p>
+                <p style="margin-top: .75rem;"><a class="btn" href="#">Test Button</a></p>
+            </section>
+
+            <section style="margin-top:1rem;" class="grid no_click">
+                <article class="card">
+                    <h3>Cartão 1</h3>
+                    <p>Use classes reutilizáveis para componentes. Evitando estilos inline</p>
+                </article>
+
+                <article class="card">
+                <h3>Cartão 2</h3>
+                <p>Grid responsivo com <code>auto-fit</code> e <code>minmax</code>mantendo cards fluídos em telas pequenas</p>
+                </article>
+
+                <article class="card">
+                    <h3>Cartão 3</h3>
+                    <p>Variables CSS (<code>:root</code>) tornam fácil ajustar paleta e espaçamento depois.</p>
+                </article>
+            </section>
+        </main>
+
+        <footer>
+            Arquivinho de estudos HTML X CSS feito com mt ☕
+        </footer>
+    </div>
+</body>
+</html>

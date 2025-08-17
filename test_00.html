@@ -53,7 +53,14 @@
 
     .brand { font-weight: 700; font-size: 1.25rem; color: var(--accent); }
     nav a { color: var(--muted); text-decoration: none; margin-left: 1rem; }
-    nav a:hover {color: white;}
+    nav a:hover {
+        background: linear-gradient(90deg, #ff00cc, #3333ff); /*Gradiente interno como background*/
+        background-clip: text; /*"Recorta o background no formato do texto (como uma máscara de corte)"*/
+        -webkit-text-fill-color: transparent; /*Deixa o texto transparente para ver o gradiente (pois ele roda como se fosse de fundo)*/
+        transform: scale(1.05); /*Aumenta o texto*/
+        filter: brightness(1); /*Bloom suave*/
+        text-shadow: 0 0 15px #fff, 0 0 45px #ff00cc, 0 0 35px #3333ff; /*Cores do Bloom*/
+    }
 
     main{
         margin-top: 1rem;

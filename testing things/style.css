@@ -1,0 +1,28 @@
+:root {
+    --bg: linear-gradient(0deg, #bcd9ea, white 30%);
+    --back_icon: #0077b6;
+    --text_general: black;
+    --title: #0077b6;
+    --head_tx: #e0e0e0;
+    --bt_tx: white;
+    --color_hover: linear-gradient(90deg, #ff00cc, transparent 70%),
+                    linear-gradient(180deg, #333fff, transparent 70%),
+                    linear-gradient(250deg, #333fff, transparent 70%);
+    --pg_txcolor: #008cd7;
+    --menu_color: #686868;
+}
+
+html, body {height: 100%}
+body{
+    font-family: 'Helvetica Neue', 'Segoe UI', system-ui, apple-system;
+    background: var(--bg);
+    color: black;
+    padding: 2rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+.no_click {
+    cursor: default;
+    user-select: none;
+}
+
